@@ -1,0 +1,76 @@
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <!-- CONTEXT -->
+    <meta charset="utf-8">
+    <title>Les clefs d'or Luxembourg</title>
+    <!-- META -->
+    <meta name="description" content="Site officiel Les clefs d'or Luxembourg retrouvez toutes l'actualités  sur notre site.">
+    <meta name="author" content="Les clefs d'or Luxembourg">
+    <!-- SOCIAL CARD -->
+    <!-- MEDIAQUERIES -->
+    <!-- STYLE -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/_css/global.css') }}">
+    <!-- FONT -->
+    <script src="https://use.typekit.net/zsk3ndb.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <!-- PLUGINS -->
+  </head>
+  <body class="special-admin">
+
+    <section class="administration">
+      <nav>
+        <ul class="cf">
+          <li><a  class="corner" href="#"><img src="{{ url_for('static', filename='assets/_images/elyxir.svg') }}" alt="Elyxir"></a></li>
+          <li><span>Statistiques des clefs d'or Luxembourg</span></li>
+        </ul>
+      </nav>
+    </section>
+
+    <section class="gestion">
+
+      <div class="side-option">
+        <ul>
+          <li><a href="{{ url_for('cdlDash') }}" class="options-link">Statistiques</a></li>
+          <li><a href="{{ url_for('cdlPublications') }}" class="options-link">Publications</a></li>
+          <li><a href="{{ url_for('cdlLangues') }}" class="options-link">Langues</a></li>
+        </ul>
+      </div>
+
+      <div class="page-admin-move">
+        <div class="statis-content" id="statis">
+          <h2>Statistiques</h2>
+          <div class="stat-content">
+            <div class="stat-box"><div class="circle-stat"><span>364</span></div><p>Nouveaux visiteurs</p></div>
+            <div class="stat-box"><div class="circle-stat"><span>200</span></div><p>Total visiteurs</p></div>
+            <div class="stat-box"><div class="circle-stat"><span>635</span></div><p>Pages parcourues</p></div>
+            <div class="stat-box"><div class="circle-stat"><span>635</span></div><p>Facebook</p></div>
+            <div class="stat-box"><div class="circle-stat"><span>635</span></div><p>Twitter</p></div>
+            <div class="stat-box"><div class="circle-stat"><span>635</span></div><p>Instagram</p></div>
+          </div>
+          <div class="stat-content">
+            <div class="graph-box"><div class="circle-stat">Graphique Indisponible</div></div>
+          </div>
+        </div>
+        </div>
+
+      </section>
+
+      <script src="{{ url_for('static', filename='assets/_js/jquery-3.2.1.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='assets/_js/switch-section-form.js') }}"></script>
+      <script>
+      $(".radio-btn").click(function() {
+        var nbr=0;
+          $(".text-content-site-trad-base-fr").each(function(nbr){
+            $(this).attr('id', 'txt-p-'+(nbr+1));
+        });
+      });
+        $(".text-content-site-trad-base-fr").click(function() {
+          var moveText = $(this).text();
+          $('#text-fr').empty();
+          $('#text-fr').val(moveText);
+        });
+      </script>
+    </body>
+    </html>

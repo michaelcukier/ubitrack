@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- CONTEXT -->
+  <meta charset="utf-8">
+  <title>Les clefs d'or Luxembourg</title>
+  <!-- META -->
+  <meta name="description" content="Site officiel Les clefs d'or Luxembourg retrouvez toutes l'actualités  sur notre site.">
+  <meta name="author" content="Les clefs d'or Luxembourg">
+  <!-- SOCIAL CARD -->
+  <!-- MEDIAQUERIES -->
+  <!-- STYLE -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/_css/global.css') }}">
+  <!-- FONT -->
+  <script src="https://use.typekit.net/zsk3ndb.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <!-- PLUGINS -->
+</head>
+<body class="special-admin">
+  <section class="administration">
+    <nav>
+      <ul class="cf">
+        <li><a  class="corner" href="#"><img src="{{ url_for('static', filename='assets/_images/elyxir.svg') }}" alt="Elyxir"></a></li>
+        <li><span>Statistiques des clefs d'or Luxembourg</span></li>
+      </ul>
+    </nav>
+  </section>
+
+  <section class="gestion">
+    <div class="side-option">
+      <ul>
+        <li><a href="{{ url_for('dashBoardAdmin') }}" class="options-link">Statistiques</a></li>
+        <li><a href="{{ url_for('admin_publications') }}" class="options-link">Publications</a></li>
+        <li><a href="{{ url_for('admin_pub') }}" class="options-link">Publicités</a></li>
+        <li><a href="{{ url_for('admin_langues') }}" class="options-link">Langues</a></li>
+      </ul>
+    </div>
+
+    <div class="page-admin-move">
+      {% if success %}
+        <div class="box-alert"><b> Status :</b><p>{{success}}</p></div>
+      {% endif %}
+      <div class="public-content">
+        <div class="publi-left">
+        <h2>Publications</h2>
+        <h3>Sélectionnez la catégories qui vous intéresse: </h3>
+        <div class="radio-btn">
+          <input type="radio" id="event" name="categories" value="0"/>
+          <label for="event">Évènements</label>
+        </div>
+        <div class="radio-btn">
+          <input type="radio" id="membres" name="categories" value="1"/>
+          <label for="membres">Membres</label>
+        </div>
+
+        <div class="radio-btn">
+          <input type="radio" id="annonces" name="categories" value="2"/>
+          <label for="annonces">Annonces</label>
+        </div>
+
+        <form action="{{url_for('admin_publications')}}" method=POST enctype="multipart/form-data" class="input-article" id="input-article">
+          <label>Titre de la publication:</label>
+          <input type="text" id="titleApercu" placeholder="Titre" class="form-control" name="titre_publication" value="{{request.form.titre_publication}}"/>
+          <label>Contenu:</label>
+          <textarea id="textApercu"  name="contenu" placeholder="Contenu"></textarea>
+          <label>Importer des images:</label>
+          <input class="style-file-button" type="file" name="file1" />
+          <input class="validation-css-style-type" type = "submit" name="formAnnonce"/>
+        </form>
+
+        <form action="{{url_for('admin_publications')}}" method=POST enctype="multipart/form-data" class="input-members" id="input-members">
+          <label>Nom:</label>
+          <input type="text" class="form-control" placeholder="Nom" id="in-name" name="member_name" value="{{request.form.member_name}}">
+          <label>Prénom:</label>
+          <input type="text" class="form-control" placeholder="Prénom" id="in-sec-name" name="member_surname" value="{{request.form.member_surname}}">
+          <label>Status:</label>
+          <input type="text" class="form-control" placeholder="Status ex: Guest relation" id="in-status" name="member_status" value="{{request.form.member_status}}">
+          <label>Étoiles:</label>
+          <input type="text" class="form-control" placeholder="De 1 à 5" id="in-stars" name="member_etoiles" value="{{request.form.member_etoiles}}">
+          <label>Adresse:</label>
+          <input type="text" class="form-control" placeholder="Adresse hotel" id="in-adress" name="member_adresse" value="{{request.form.member_adresse}}">
+          <label>Sélectionner le type de membre</label>
+          <select name="member_honor" id="typeMembre" class="selectpicker form-control member_honor">
+              <option value="standard"> Standard </option>
+              <option value="honored"> Honoré </option>
+          </select>
+          <label>Sélectionner parmi les logos déjà enregistré:</label>
+          <select name="logoHotel" id="logoHotel" class="selectpicker form-control logoHotel">
+              <option value="0"> Le royal </option>
+              <option value="1"> DoubleTree </option>
+              <option value="2"> Mercure </option>
+              <option value="3"> Sofitel </option>
+              <option value="4"> Le place d'armes </option>
+          </select>
+          <label>Photo de profil:</label>
+          <input class="style-file-button" type="file" name="file" />
+          <input class="validation-css-style-type" type="submit" name="formMembers"/>
+        </form>
+
+        <form action="{{url_for('admin_publications')}}" method=POST enctype="multipart/form-data" class="input-event" id="input-event">
+          <label>Nom de l'évènement:</label>
+          <input type="text" class="form-control" placeholder="Nom" id="in-date" name="event_name" value="{{request.form.event_name}}">
+          <label>Date:</label>
+          <input type="text" class="form-control" placeholder="Date ex: 21/12/17" id="in-date" name="event_date" value="{{request.form.event_date}}">
+          <label>Description:</label>
+          <input type="text" class="form-control" placeholder="Description" id="in-description" name="event_description" value="{{request.form.event_description}}">
+          <label>Photos:</label>
+          <input class="style-file-button" type="file" name="file" />
+          <input class="validation-css-style-type" type = "submit" name="formEvents"/>
+        </form>
+        </div>
+
+        <div class="apercu">
+          <h2>Récapitulatif</h2>
+          <div id="ap-annonces">
+            <p id="previewtitle" class="previewtitle"></p>
+            <p id="preview" class="preview"></p>
+          </div>
+
+          <div id="ap-membres">
+            <p id="name-members" class="previewtitle"></p>
+            <p id="name-sec-members" class="preview"></p>
+            <p id="status-members" class="preview"></p>
+            <p id="stars-members" class="preview"></p>
+            <p id="adress-members" class="preview"></p>
+            <p id="img-members" class="preview"></p>
+          </div>
+          <div id="ap-event">
+            <p id="ap-date" class="previewtitle"></p>
+            <p id="ap-desc" class="preview"></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='assets/_js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/_js/switch-section-form.js') }}"></script>
+    <script>
+    $(".radio-btn").click(function() {
+      var nbr=0;
+      $(".text-content-site-trad-base-fr").each(function(nbr){
+        $(this).attr('id', 'txt-p-'+(nbr+1));
+      });
+    });
+    $(".text-content-site-trad-base-fr").click(function() {
+      var moveText = $(this).text();
+      $('#text-fr').empty();
+      $('#text-fr').val(moveText);
+    });
+    </script>
+  </body>
+  </html>

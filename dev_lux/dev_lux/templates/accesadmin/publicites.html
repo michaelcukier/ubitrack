@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- CONTEXT -->
+  <meta charset="utf-8">
+  <title>Les clefs d'or Luxembourg</title>
+  <!-- META -->
+  <meta name="description" content="Site officiel Les clefs d'or Luxembourg retrouvez toutes l'actualités  sur notre site.">
+  <meta name="author" content="Les clefs d'or Luxembourg">
+  <!-- SOCIAL CARD -->
+  <!-- MEDIAQUERIES -->
+  <!-- STYLE -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/_css/global.css') }}">
+  <!-- FONT -->
+  <script src="https://use.typekit.net/zsk3ndb.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <!-- PLUGINS -->
+</head>
+<body class="special-admin">
+
+  <section class="administration">
+    <nav>
+      <ul class="cf">
+        <li><a  class="corner" href="#"><img src="{{ url_for('static', filename='assets/_images/elyxir.svg') }}" alt="Elyxir"></a></li>
+        <li><span>Statistiques des clefs d'or Luxembourg</span></li>
+      </ul>
+    </nav>
+  </section>
+  <section class="gestion">
+    <div class="side-option">
+      <ul>
+        <li><a href="{{ url_for('dashBoardAdmin') }}" class="options-link">Statistiques</a></li>
+        <li><a href="{{ url_for('admin_publications') }}" class="options-link">Publications</a></li>
+        <li><a href="{{ url_for('admin_pub') }}" class="options-link">Publicités</a></li>
+        <li><a href="{{ url_for('admin_langues') }}" class="options-link">Langues</a></li>
+      </ul>
+    </div>
+    <div class="page-admin-move">
+      <div class="pub-content" id="ban-pub">
+        {% if success %}
+          <div class="box-alert"><b> Status :</b><p>{{success}}</p></div>
+        {% endif %}
+        <h2>Publicités</h2>
+        <h4>Bannières</h4>
+        <div class="exist-ban">
+          {% for pub in bannieres %}
+            <form action="/deletePub/{{pub[2]}}"> <p><b>{{ loop.index }}</b><span>{{ pub[1] }}</span><a href="{{ pub[4] }}">{{ pub[4] }}</a><button type="submit">Supprimer</button><b>Actif</b></p> </form>
+          {% endfor %}
+        </div>
+        <h4>Bloc loisirs</h4>
+        <div class="exist-bloc">
+          {% for pub in loisirs %}
+            <form action="/deletePub/{{pub[2]}}"> <p><b>{{ loop.index }}</b><span>{{ pub[1] }}</span><a href="{{ pub[4] }}">{{ pub[4] }}</a> <button type="submit"> Supprimer </button> <b>Actif</b></p> </form>
+          {% endfor %}
+        </div>
+        <form action="{{ url_for('admin_pub') }}" method=POST enctype="multipart/form-data" class="input-event" id="input-event">
+          <label>Catégorie:</label>
+          <select name="typedepub" class="selectpicker form-control">
+              <option value="Banniere">Banniere</option>
+              <option value="Loisir">Loisir</option>
+          </select>
+
+          <label>Url de la publicité:</label>
+          <input type="text" class="form-control" placeholder="www.nouvelle-pub.com" name="pub_url" value="{{request.form.pub_url}}">
+          <label>Contenu de l'annonce:</label>
+          <input type="text" class="form-control" placeholder="Texte de l'annonce" name="pub_contenu" value="{{request.form.pub_contenu}}">
+          <label>Image:</label>
+          <input class="style-file-button" type="file" name="file" />
+          <input class="validation-css-style-type" type = "submit" name="nom"/> <!-- bouton ajout de la publicité !-->
+        </form>
+      </div>
+      </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='assets/_js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/_js/switch-section-form.js') }}"></script>
+    <script>
+    $(".radio-btn").click(function() {
+      var nbr=0;
+      $(".text-content-site-trad-base-fr").each(function(nbr){
+        $(this).attr('id', 'txt-p-'+(nbr+1));
+      });
+    });
+    $(".text-content-site-trad-base-fr").click(function() {
+      var moveText = $(this).text();
+      $('#text-fr').empty();
+      $('#text-fr').val(moveText);
+    });
+    </script>
+  </body>
+  </html>

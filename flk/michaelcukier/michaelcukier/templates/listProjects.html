@@ -1,0 +1,14 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+{% for project in data %}
+  <div class="uk-card uk-card-small uk-card-default uk-card-body uk-width-1-2@m">
+
+  <p><a style="text-decoration: none; color: #3366BB;" href="/projects/{{ project[7] }}">{{project[4]}}</a>, {{ project[5] }} </p>
+
+  </div>
+  <br />
+{% endfor %}
+
+{% endblock content %}

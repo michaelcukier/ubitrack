@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!-- CONTEXT -->
+    <meta charset="utf-8">
+    <title>Les clefs d'or Luxembourg</title>
+
+    <!-- META -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site officiel Les clefs d'or Luxembourg retrouvez toutes l'actualités  sur notre site.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Les clefs d'or Luxembourg">
+
+    <!-- SOCIAL CARD -->
+
+    <!-- MEDIAQUERIES -->
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/_css/global.css') }}">
+
+    <!-- FONT -->
+    <script src="https://use.typekit.net/zsk3ndb.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <!-- PLUGINS -->
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108181682-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-108181682-1');
+      </script>
+
+  </head>
+
+  <body>
+
+    {% include 'includes/nomain-page.html' %}
+
+      <!-- hobby content -->
+      <section class="hobby">
+        <div class="wrap">
+          <h2 class="no-margin-bottom">Cityshopping Luxembourg</h2>
+          <div class="cf">
+            <div class="hobbys book">
+              <p class="book-content">
+                {{content_shopping[0]}}
+                </p>
+                <p class="book-content">
+                  {{content_shopping[1]}}
+                </p>
+                <p class="book-content">
+                  {{content_shopping[2]}}
+              </p>
+                <p class="book-content">
+                  {{content_shopping[3]}}
+                </p>
+              <p class="book-content">
+                {{content_shopping[4]}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="before-footer">
+        <div class="wrap">
+          <a href="#top"><img src="/static/assets/_images/Logo.png" alt="go to top logo clefs d'or" class="gotop"></a>
+        </div>
+      </section>
+
+      <footer class="cf">
+        <div class="wrap">
+        <div class="box-creator">
+          <p>Developped by</p>
+          <p>BACKEND - <a href="#">Michael Cukier</a></p>
+          <p>FRONTEND - <a href="#">Benjamin Verboogen</a></p>
+        </div>
+        <div class="box-informations">
+          <p>Les clefs d'or</p>
+          <p>LUXEMBOURG</p>
+          <p><a href="#">Mentions Légales</a> & <a href="#">Crédits</a> 2017</p>
+        </div>
+        </div>
+      </footer>
+      <script src="/static/assets/_js/jquery-3.2.1.min.js"></script>
+      <script src="/static/assets/_js/menu-res.js"></script>
+  </body>
+</html>

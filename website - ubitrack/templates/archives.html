@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> UBITrack </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='font2.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" sizes="16x16">
+    <script src="{{ url_for('static', filename='moment.js') }}"> </script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid bg-color">
+      <div class="row">
+        <div class="col-md-3 logo">
+          <a style="text-decoration: none; color: inherit;" href="{{ url_for('homepage') }}">
+          <ul>
+            <li><img src="{{ url_for('static', filename='images/logo.svg') }}" class="img-responsive"> </li>
+            <li>
+              <h5 style="font-family: 'ProximaNovaS-Bold' !important; font-weight: 900 !important;">UBITrack</h5>
+              <p>Automated Universal Basic Income news service</p>
+            </li>
+          </ul>
+        </a>
+        </div>
+        <div class="col-md-9 universal">
+          <ul class="main-text">
+          <li style="display: none;"> &nbsp; </li>
+          <li style="display: none;"></li>
+          <li><a style="text-decoration: none;" href="{{ url_for('homepage') }}"> &nbsp; </a> </li>
+          <a class="linkFcb" href="https://www.facebook.com/ubi.track.news/">
+            <img src="{{ url_for('static', filename='images/fcb_logo.jpg') }}" width="30" height="30" style="margin-left: 10px; margin-right: 1px;">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <h2>Archives of all the Basic Income news articles</h2>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th> </th>
+            <th>Date</th>
+            <th>Media</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for elem in allArticles %}
+            <tr>
+                <td style=""> {% if elem[2] == "no_logo.jpg" %} <img src="/static/no_logo.jpg" style="width: 20px; height: 20px;" > {% else %} <img src="{{elem[2]}}" style="width: 20px; height: 20px;" > {% endif %} </td>
+                <td class="col-md-7"> <a style='text-decoration: none; margin-left: -35px;' href='{{elem[1]}}'> {{elem[0]}} </a> </td>
+                <td>{{elem[5]}}</td>
+                <td>{{elem[10]}}</td>
+              </a>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+  </body>
+  </html>

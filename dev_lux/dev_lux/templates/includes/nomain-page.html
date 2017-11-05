@@ -1,0 +1,32 @@
+{% if request.path == "/shopping/" %}
+<header class="nomain-page shopping">
+{% elif request.path == "/investir/" %}
+<header class="nomain-page investir">
+{% elif request.path == "/decouvrir/" %}
+<header class="nomain-page decouvrir">
+{% else %}
+<header class="nomain-page">
+{% endif %}
+  <!-- Navigation principal -->
+  <nav class="cf" id="#top">
+    <span class="burger" id="burger">menu</span>
+    <div class="wrap">
+    <ul id="top-menu">
+      <li><a class="retour" href="{{ url_for('homepage') }}">Les clefs d'or Luxembourg</a></li>
+      <li class="link"><a class="links-nav" href="{{ url_for('membres')}}">Membres</a></li>
+      <li class="link"><a class="links-nav" href="{{ url_for('investir')}}">Investir</a></li>
+      <li class="link"><a class="retour links-nav" href="{{ url_for('events')}}">Évènements</a></li>
+      <li class="link"><a class="retour links-nav" href="{{ url_for('contact')}}">Nous contacter</a></li>
+      <li class="link other-nav"><a class="retour links-nav" href="#"><img class="ico-lang" alt="langues" src="/static/assets/_images/trad.svg"></a>
+        <ul class="under-nav">
+            <li class="no-first"><a href="/sc/en">EN</a></li>
+            <li><a href="/sc/fr">FR</a></li>
+            <li><a href="/sc/lux">LUX</a></li>
+            <li><a href="/sc/all">ALL</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+    <h1>Événements</h1>
+</header>

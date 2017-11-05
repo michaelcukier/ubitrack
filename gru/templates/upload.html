@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Py2App - Web-based online converter (.py to .exe) </title>
+        <meta name="Description" content="Convert your Python script (.py) to a standalone Windows executable (.exe) in your browser ">
+        <meta name="Keywords" content="online converter python to exe, py to app, py2app, py to exe, py2exe, python windows, create windows executable python, python to windows, generate exe from python, python script to exe, exe generator, python to exe, online python compiler">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          <script>
+          (function(){
+                  var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call","trackForm","trackClick"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
+          })("woopra");
+
+          woopra.config({
+              domain: 'py2app.pw'
+          });
+          woopra.track();
+        </script>
+        <style>
+        a.homeLink:link{ text-decoration: none; }
+        a.success:link{ text-decoration: none;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div style="height: 20px;"> </div>
+            <a href="http://www.py2app.pw/" class="homeLink">
+              <div class="jumbotron">
+                  <h1>web-based .py to .exe converter</h1>
+                  <h4>Convert your Python script (.py) into a standalone Windows executable (.exe) online</h4>
+              </div>
+            </a>
+            <form action = "uploader" method = "POST" enctype = "multipart/form-data">
+
+                {% if success %}
+                  <div class="alert alert-info">
+                      <strong> <a class="success" href ="{{success[0]}}"> conversion success: click here to download "{{success[1]}}" newly created </a> </strong>
+                  </div>
+                {% endif %}
+
+                {% if warning %}
+                  <div class="alert alert-danger">
+                      <strong>Please upload a .py file</strong>
+                  </div>
+                {% endif %}
+
+                {% if error %}
+                  <div class="alert alert-danger">
+                      <strong>{{error}}</strong>
+                  </div>
+                {% endif %}
+
+                Python file: <input type = "file" name = "file" />
+
+                <hr/>
+
+                Libraries: <input type="text" size="60" class="form-control" name="libraries" value="{{request.form.libraries}}">
+                • If you have to import multiple libraries, separate by ',' without any space. </br>
+                • You must write the library as you would do 'pip install'. e.g. for the Facebook library, write 'facebook-sdk'. </br>
+                • You don't need to write the standard libraries. </br>
+                • If you don't have to import any library, leave blank.
+
+                <hr/>
+
+                Python version:
+                <select name="pythonversion" class="form-control pythonversion">
+                    <option value="271">Python 2</option>
+                    <option value="333">Python 3</option>
+                </select>
+
+                <hr/>
+
+                <input type = "submit" class='btn btn-primary' value="Convert now. This may take between 1 to 5 minutes."/>
+            </form>
+            <p style='color: #CCCCCC; margin-top: 20px;'>Made by <a href="http://michaelcukier.com"> Michael Cukier </a></p>
+        </div>
+    </body>
+</html>

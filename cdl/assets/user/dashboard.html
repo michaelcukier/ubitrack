@@ -1,0 +1,242 @@
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+
+    <!-- CONTEXT -->
+    <meta charset="utf-8">
+    <title>Les clefs d'or Luxembourg</title>
+
+    <!-- META -->
+    <meta name="description" content="Site officiel Les clefs d'or Luxembourg retrouvez toutes l'actualités  sur notre site.">
+    <meta name="author" content="Les clefs d'or Luxembourg">
+
+    <!-- SOCIAL CARD -->
+
+    <!-- MEDIAQUERIES -->
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="../assets/_css/global.css">
+
+    <!-- FONT -->
+    <script src="https://use.typekit.net/zsk3ndb.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <!-- PLUGINS -->
+
+  </head>
+
+  <body class="special-admin">
+    <section class="administration">
+      <nav>
+        <ul class="cf">
+          <li><a  class="corner" href="#"><img src="../assets/_images/elyxir.svg" alt="Elyxir"></a></li>
+          <li><span>Statistiques des clefs d'or Luxembourg</span></li>
+        </ul>
+      </nav>
+    </section>
+    <section class="gestion">
+      <div class="side-option">
+        <ul>
+          <li><button id="stat" type="button"  name="button">Statistiques</button></li>
+          <li><button id="publications" type="button" name="button">Publications</button></li>
+          <li><button id="publicites" type="button" name="button">Publicités</button></li>
+          <li><button id="langues" type="button" name="button">Langues</button></li>
+          <li><button id="langues" type="button" name="button">Crédits</button></li>
+          <li><button id="langues" type="button" name="button">Mentions</button></li>
+          <li><button id="langues" type="button" name="button">Plugins</button></li>
+          <li><button id="langues" type="button" name="button">Super Admin</button></li>
+        </ul>
+      </div>
+
+      <div class="page-admin-move">
+
+        <div class="statis-content" id="statis">
+          <h2>Statistiques</h2>
+          <div class="stat-content">
+            <div class="stat-box"><div class="circle-stat"><span>364</span></div><p>Nouveaux visiteurs</p></div>
+            <div class="stat-box"><div class="circle-stat"><span>200</span></div><p>Total visiteurs</p></div>
+            <div class="stat-box"><div class="circle-stat"><span>635</span></div><p>Pages parcourues</p></div>
+            <div class="stat-box"><div class="circle-stat"><span>635</span></div><p>Facebook</p></div>
+            <div class="stat-box"><div class="circle-stat"><span>635</span></div><p>Twitter</p></div>
+            <div class="stat-box"><div class="circle-stat"><span>635</span></div><p>Instagram</p></div>
+          </div>
+          <div class="stat-content">
+            <div class="graph-box"><div class="circle-stat">Graphique Indisponible</div></div>
+          </div>
+        </div>
+
+        <div class="public-content" id="publ1">
+          <div class="publi-left">
+          <h2>Publications</h2>
+          <h3>Sélectionnez la catégories qui vous intéresse: </h3>
+          <div class="radio-btn">
+          <input type="radio" id="event" name="categories" value="0"/>
+          <label for="event">Évènements</label>
+          </div>
+          <div class="radio-btn">
+            <input type="radio" id="membres" name="categories" value="1"/>
+            <label for="membres">Membres</label>
+            </div>
+            <div class="radio-btn">
+            <input type="radio" id="annonces" name="categories" value="2"/>
+            <label for="annonces">Annonces</label>
+          </div>
+          <form class="input-article" id="input-article">
+            <label>Titre de la publication:</label>
+            <input type="text" id="titleApercu" placeholder="Titre"/>
+            <label>Contenu:</label>
+            <textarea id="textApercu"  placeholder="Contenu"></textarea>
+            <label>Importer des images:</label>
+            <input type="file" name="nom" />
+          </form>
+          <form class="input-members" id="input-members">
+            <label>Nom:</label>
+            <input id="in-name" type="text" placeholder="Nom"/>
+            <label>Prénom:</label>
+            <input  id="in-sec-name" type="text" placeholder="Prénom"/>
+            <label>Status:</label>
+            <input  id="in-status" type="text" placeholder="Status ex: Guest relation"/>
+            <label>Étoiles:</label>
+            <input  id="in-stars" type="text" placeholder="De 1 à 5"/>
+            <label>Adresse:</label>
+            <input id="in-adress" type="text" placeholder="Adresse hotel"/>
+            <label>Sélectionner parmi les logos déjà enregistré:</label>
+            <select name="logoHotel" id="logoHotel">
+                <option value="0">aucun</option>
+            </select>
+            <label>Logo hôtel:</label>
+            <input type="file" name="nom" />
+          </form>
+          <form class="input-event" id="input-event">
+            <label>Date:</label>
+            <input id="in-date" type="text" placeholder="Date ex: 21/12/17"/>
+            <label>Description:</label>
+            <input  id="in-description" type="text" placeholder="Description"/>
+            <label>Photos:</label>
+            <input type="file" name="nom" />
+          </form>
+          </div>
+          <div class="apercu">
+            <h2>Récapitulatif</h2>
+            <div id="ap-annonces">
+              <p id="previewtitle" class="previewtitle"></p>
+              <p id="preview" class="preview"></p>
+            </div>
+            <div id="ap-membres">
+              <p id="name-members" class="previewtitle"></p>
+              <p id="name-sec-members" class="preview"></p>
+              <p id="status-members" class="preview"></p>
+              <p id="stars-members" class="preview"></p>
+              <p id="adress-members" class="preview"></p>
+              <p id="img-members" class="preview"></p>
+            </div>
+            <div id="ap-event">
+              <p id="ap-date" class="previewtitle"></p>
+              <p id="ap-desc" class="preview"></p>
+            </div>
+            <button>Publier</button>
+          </div>
+        </div>
+
+        <div class="pub-content" id="ban-pub">
+          <h2>Publicités</h2>
+          <h4>Bannières</h4>
+          <div class="exist-ban">
+            <p><b>01</b><span>With its roots as a Chinese noodle dish...</span><button>Supprimer</button><b>Actif</b></p>
+            <p><b>02</b><span>With its roots as a Chinese noodle dish...</span><button>Supprimer</button><b>Actif</b></p>
+            <p><b>03</b><span>With its roots as a Chinese noodle dish...</span><button>Supprimer</button><b>Actif</b></p>
+          </div>
+          <h4>Bloques loisirs</h4>
+          <div class="exist-bloc">
+            <p><b>01</b><span>Discostou Luxembourg</span><a href="www.discostou.be">URL</a><button>Supprimer</button><b>Actif</b></p>
+            <p><b>01</b><span>Discostou Luxembourg</span><a href="www.discostou.be">URL</a><button>Supprimer</button><b>Actif</b></p>
+            <p><b>01</b><span>Discostou Luxembourg</span><a href="www.discostou.be">URL</a><button>Supprimer</button><b>Actif</b></p>
+            <p><b>01</b><span>Discostou Luxembourg</span><a href="www.discostou.be">URL</a><button>Supprimer</button><b>Actif</b></p>
+          </div>
+          <form>
+            <label>Catégorie:</label>
+            <select name="typedepub">
+                <option value="banniere">Bannière</option>
+                <option value="bloque">Bloque</option>
+            </select>
+            <label>Contenu de l'annonce:</label>
+            <input type="text" placeholder="Texte de l'annonce"/>
+            <label>Image:</label>
+            <input type="file"/>
+            <button type="submit" value="Submit">Ajouter la publicité</button>
+          </form>
+        </div>
+
+        <div class="trad-content" id="trad">
+          <div class="trad-content-box">
+          <h2>Traduction</h2>
+          <div class="radio-btn">
+            <input type="radio" id="homepage" name="categories" value="1"/>
+            <label for="homepage">Homepage</label>
+          </div>
+          <div class="radio-btn">
+            <input type="radio" id="membres-page" name="categories" value="1"/>
+            <label for="membres-page">Membres</label>
+          </div>
+          <div class="radio-btn">
+            <input type="radio" id="business-page" name="categories" value="1"/>
+            <label for="business-page">Business</label>
+          </div>
+          <div class="radio-btn">
+            <input type="radio" id="investir-page" name="categories" value="1"/>
+            <label for="investir-page">investir</label>
+          </div>
+          <div class="radio-btn">
+            <input type="radio" id="loisir-pages" name="categories" value="1"/>
+            <label for="loisir-pages">Loisir</label>
+          </div>
+          <div class="radio-btn">
+            <input type="radio" id="contact-pages" name="categories" value="1"/>
+            <label for="contact-pages">Contact</label>
+          </div>
+
+          <div class="exist-bloc">
+            <h4>Contenu de la page sélectionnée</h4>
+            <div class="all-text-page">
+                <p class="text-content-site-trad-base-fr">text1</p>
+                <p class="text-content-site-trad-base-fr">text2</p>
+                <p class="text-content-site-trad-base-fr">text3</p>
+                <p class="text-content-site-trad-base-fr">text4</p>
+            </div>
+            <h4>Texte francais</h4>
+            <input id="text-fr" type="text" name="trad-fr">
+            <h4>Traduction Anglais</h4>
+            <input type="text" name="trad-en">
+            <h4>Traduction Luxembourgeois</h4>
+            <input type="text" name="trad-lu">
+            <h4>Traduction Allemand</h4>
+            <input type="text" name="trad-du">
+            <button type="submit" value="Submit">Valider la traduction</button>
+          </div>
+        </div>
+        <div class="trad-content-box-2">
+          <h2>Traduction global</h2>
+
+        </div>
+      </div>
+        </div>
+      </section>
+
+      <script src="../assets/_js/jquery-3.2.1.min.js"></script>
+      <script src="../assets/_js/switch-section-form.js"></script>
+      <script>
+      $(".radio-btn").click(function() {
+        var nbr=0;
+          $(".text-content-site-trad-base-fr").each(function(nbr){
+            $(this).attr('id', 'txt-p-'+(nbr+1));
+        });
+      });
+        $(".text-content-site-trad-base-fr").click(function() {
+          var moveText = $(this).text();
+          $('#text-fr').empty();
+          $('#text-fr').val(moveText);
+        });
+      </script>
+    </body>
+    </html>

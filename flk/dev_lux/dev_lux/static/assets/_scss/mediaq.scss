@@ -1,0 +1,160 @@
+
+@media screen and (max-width: 1180px) {
+  header nav{
+    box-sizing: border-box;
+    padding: 0 20px;
+  }
+  .wrap{
+    padding: 0 20px;
+  }
+  .header-content{
+    left: 15%;
+  }
+  .image-box{
+    width: 100%;
+  }
+  .api-actuality{
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 100px;
+    float: left;
+  }
+  .anim{
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 1126px) {
+  .active-menu-top:after{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  header nav .wrap ul .link{
+    display: none;
+  }
+  header nav:after{
+    display: none;
+  }
+  header nav .wrap ul li:first-child{
+    position: absolute;
+    background: transparent;
+    top:0;
+    left: 0;
+    z-index: 20;
+    width: 220px;
+    margin: 0;
+}
+  header nav .wrap ul{
+    width: 100%;
+    text-align: center;
+    margin-top: 60px;
+
+  }
+  header nav .wrap ul li{
+    float: none;
+    display: block;
+    background: $red;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  header nav .wrap ul li a{
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .event-box-date-lastest .event-date-info{
+    width: 100%;
+    height: 85px;
+  }
+  .event-box-date-lastest .event-content-info{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .api-actuality{
+    padding: 0 15px;
+  }
+  .hobbys .book-content{
+    padding: 0 50px;
+  }
+  .event-box-date-lastest .event-photos-info img{
+    width: 33.33%;
+  }
+}
+
+
+@media screen and (max-width: 485px) {
+  .event-box-date-lastest .event-photos-info img{
+    width: 100%;
+  }
+  .hobbys .book-content{
+    padding: 0 20px;
+  }
+  .nomain-page{
+    height: 50vh;
+  }
+  .nomain-page h1{
+    top: 30%;
+  }
+  .hobby{
+    padding-top: 0px;
+  }
+  h2, h3{
+    padding: 0;
+    letter-spacing: 2px;
+    font-size: 16px;
+    text-align: center;
+    &:before{
+      display: none;
+    }
+  }
+  .api-actuality .container-social-line .social-line p{
+    font-size: 14px;
+  }
+  .api-actuality .container-social .social{
+    width: 33.33%;
+    box-shadow:none;
+  }
+  .api-actuality .container-social .social:nth-child(2){
+    margin: 0;
+    border-right: 5px solid $yel;
+    border-left: 5px solid $yel;
+    box-sizing: border-box;
+  }.api-actuality{
+    padding: 0;
+  }
+  .api-actuality h3{
+    padding: 0 20px;
+  }
+  .header-content{
+    left: 0;
+    padding: 0 10px;
+    img{
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  header nav:after{
+    display: none !important;
+  }
+  .active-menu-top:after{
+    display: none;
+  }
+  .section-membres .border-members .wrap .rebuild-other{
+    padding: 25px 0 0 0;
+  }
+  .section-membres .border-members .wrap .rebuild-h2{
+    margin-left: 0;
+    width: 100%;
+  }
+  .business .border-members .wrap .box-business .border-button a{
+    padding: 25px 0;
+  }
+  footer .box-creator, footer .box-informations{
+    width: 100%;
+    text-align: left;
+    line-height: 22px;
+  }
+}

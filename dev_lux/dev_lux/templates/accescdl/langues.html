@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- CONTEXT -->
+  <meta charset="utf-8">
+  <title>Les clefs d'or Luxembourg</title>
+  <!-- META -->
+  <meta name="description" content="Site officiel Les clefs d'or Luxembourg retrouvez toutes l'actualités  sur notre site.">
+  <meta name="author" content="Les clefs d'or Luxembourg">
+  <!-- SOCIAL CARD -->
+  <!-- MEDIAQUERIES -->
+  <!-- STYLE -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/_css/global.css') }}">
+  <!-- FONT -->
+  <script src="https://use.typekit.net/zsk3ndb.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <!-- PLUGINS -->
+</head>
+<body class="special-admin">
+
+  <section class="administration">
+    <nav>
+      <ul class="cf">
+        <li><a  class="corner" href="#"><img src="{{ url_for('static', filename='assets/_images/elyxir.svg') }}" alt="Elyxir"></a></li>
+        <li><span>Statistiques des clefs d'or Luxembourg</span></li>
+      </ul>
+    </nav>
+  </section>
+
+  <section class="gestion">
+
+    <div class="side-option">
+      <ul>
+        <li><a href="{{ url_for('cdlDash') }}" class="options-link">Statistiques</a></li>
+        <li><a href="{{ url_for('cdlPublications') }}" class="options-link">Publications</a></li>
+        <li><a href="{{ url_for('cdlLangues') }}" class="options-link">Langues</a></li>
+      </ul>
+    </div>
+
+    <div class="page-admin-move">
+      <div class="trad-content" id="trad">
+        <div class="trad-content-box">
+        <h2>Traduction</h2>
+        <div class="radio-btn">
+          <input type="radio" id="homepage" name="categories" value="1"/>
+          <label for="homepage">Homepage</label>
+        </div>
+        <div class="radio-btn">
+          <input type="radio" id="membres-page" name="categories" value="1"/>
+          <label for="membres-page">Membres</label>
+        </div>
+        <div class="radio-btn">
+          <input type="radio" id="business-page" name="categories" value="1"/>
+          <label for="business-page">Investir</label>
+        </div>
+        <div class="radio-btn">
+          <input type="radio" id="decou-pages" name="categories" value="1"/>
+          <label for="decou-pages">Découvrir</label>
+        </div>
+        <div class="radio-btn">
+          <input type="radio" id="shop-pages" name="categories" value="1"/>
+          <label for="shop-pages">Shopping</label>
+        </div>
+
+        <div class="exist-bloc">
+          <h4>Contenu fr - en - lu - de</h4>
+
+          <!-- HOMEPAGE -->
+          <div class="all-text-page page_homepage">
+            <form action="{{url_for('cdlLangues')}}" method=POST enctype="multipart/form-data">
+              **** VERSION FRANCAISE ***
+              <input class="quart" id="text-home-fr" type="text" name="trad-fr-h1" value="{{content_homepage_fr}}">
+              **** VERSION ANGLAISE ***
+              <input class="quart" id="text-home-en" type="text" name="trad-en-h2" value="{{content_homepage_en}}">
+              **** VERSION LUXEMBOURGOISE ***
+              <input class="quart" id="text-home-lu" type="text" name="trad-lux-h3" value="{{content_homepage_lux}}">
+              **** VERSION ALLEMANDE ***
+              <input class="quart" id="text-home-de" type="text" name="trad-all-h4" value="{{content_homepage_all}}">
+              <input class="validation-css-style-type" type="submit" name="form_homepage" value="Valider la traduction"/>
+            </form>
+          </div>
+
+          <!-- MEMBRES -->
+          <div class="all-text-page page_membres">
+            <form action="{{url_for('cdlLangues')}}" method=POST enctype="multipart/form-data">
+              **** VERSION FRANCAISE ***
+              <input class="quart" id="text-membres-fr" type="text" name="trad-fr-1" value="{{txt_fr_1}}">
+              <input class="quart" id="text-membres-en" type="text" name="trad-fr-2" value="{{txt_fr_2}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-fr-3" value="{{txt_fr_3}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-fr-4" value="{{txt_fr_4}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-fr-5" value="{{txt_fr_5}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-fr-6" value="{{txt_fr_6}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-fr-7" value="{{txt_fr_7}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-fr-8" value="{{txt_fr_8}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-fr-9" value="{{txt_fr_9}}">
+              **** VERSION ANGLAISE *** BENJA RAJOUTE UNE LIGNE DE SEPARATION ICI STP
+              <input class="quart" id="text-membres-fr" type="text" name="trad-en-1" value="{{txt_en_1}}">
+              <input class="quart" id="text-membres-en" type="text" name="trad-en-2" value="{{txt_en_2}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-en-3" value="{{txt_en_3}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-en-4" value="{{txt_en_4}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-en-5" value="{{txt_en_5}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-en-6" value="{{txt_en_6}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-en-7" value="{{txt_en_7}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-en-8" value="{{txt_en_8}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-en-9" value="{{txt_en_9}}">
+              **** VERSION LUXEMBOURGOISE *** BENJA RAJOUTE UNE LIGNE DE SEPARATION ICI STP
+              <input class="quart" id="text-membres-fr" type="text" name="trad-lux-1" value="{{txt_lux_1}}">
+              <input class="quart" id="text-membres-en" type="text" name="trad-lux-2" value="{{txt_lux_2}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-lux-3" value="{{txt_lux_3}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-lux-4" value="{{txt_lux_4}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-lux-5" value="{{txt_lux_5}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-lux-6" value="{{txt_lux_6}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-lux-7" value="{{txt_lux_7}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-lux-8" value="{{txt_lux_8}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-lux-9" value="{{txt_lux_9}}">
+              **** VERSION ALLEMANDE *** BENJA RAJOUTE UNE LIGNE DE SEPARATION ICI STP
+              <input class="quart" id="text-membres-fr" type="text" name="trad-all-1" value="{{txt_all_1}}">
+              <input class="quart" id="text-membres-en" type="text" name="trad-all-2" value="{{txt_all_2}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-all-3" value="{{txt_all_3}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-all-4" value="{{txt_all_4}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-all-5" value="{{txt_all_5}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-all-6" value="{{txt_all_6}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-all-7" value="{{txt_all_7}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-all-8" value="{{txt_all_8}}">
+              <input class="quart" id="text-membres-fr" type="text" name="trad-all-9" value="{{txt_all_9}}">
+
+              <input class="validation-css-style-type" type="submit" name="form_trad_membres" value="Valider la traduction"/>
+
+            </form>
+            </div>
+
+          <!-- business -->
+          <div class="all-text-page page_business">
+            <form action="{{url_for('cdlLangues')}}" method=POST enctype="multipart/form-data">
+              **** VERSION FRANCAISE *** ligne sep
+              <input class="quart" id="text-business-fr" type="text" name="trad-fr-1-1" value="{{line1_invest_fr}}">
+              <input class="quart" id="text-business-en" type="text" name="trad-fr-2-2" value="{{line2_invest_fr}}">
+              <input class="quart" id="text-business-lu" type="text" name="trad-fr-3-3" value="{{line3_invest_fr}}">
+              <input class="quart" id="text-business-de" type="text" name="trad-fr-4-4" value="{{line4_invest_fr}}">
+              <input class="quart" id="text-business-de" type="text" name="trad-fr-5-5" value="{{line5_invest_fr}}">
+              **** VERSION ANGLAISE *** ligne sep
+              <input class="quart" id="text-business-fr" type="text" name="trad-en-1-1" value="{{line1_invest_en}}">
+              <input class="quart" id="text-business-en" type="text" name="trad-en-2-2" value="{{line2_invest_en}}">
+              <input class="quart" id="text-business-lu" type="text" name="trad-en-3-3" value="{{line3_invest_en}}">
+              <input class="quart" id="text-business-de" type="text" name="trad-en-4-4" value="{{line4_invest_en}}">
+              <input class="quart" id="text-business-de" type="text" name="trad-en-5-5" value="{{line5_invest_en}}">
+              **** VERSION LUXEMBOURGOISE *** ligne sep
+              <input class="quart" id="text-business-fr" type="text" name="trad-lux-1-1" value="{{line1_invest_lux}}">
+              <input class="quart" id="text-business-en" type="text" name="trad-lux-2-2" value="{{line2_invest_lux}}">
+              <input class="quart" id="text-business-lu" type="text" name="trad-lux-3-3" value="{{line3_invest_lux}}">
+              <input class="quart" id="text-business-de" type="text" name="trad-lux-4-4" value="{{line4_invest_lux}}">
+              <input class="quart" id="text-business-de" type="text" name="trad-lux-5-5" value="{{line5_invest_lux}}">
+              **** VERSION ALLEMANDE *** ligne sep
+              <input class="quart" id="text-business-fr" type="text" name="trad-all-1-1" value="{{line1_invest_all}}">
+              <input class="quart" id="text-business-en" type="text" name="trad-all-2-2" value="{{line2_invest_all}}">
+              <input class="quart" id="text-business-lu" type="text" name="trad-all-3-3" value="{{line3_invest_all}}">
+              <input class="quart" id="text-business-de" type="text" name="trad-all-4-4" value="{{line4_invest_all}}">
+              <input class="quart" id="text-business-de" type="text" name="trad-all-5-5" value="{{line5_invest_all}}">
+
+              <input class="validation-css-style-type" type="submit" name="form_investir" value="Valider la traduction"/>
+            </form>
+          </div>
+
+          <!-- loisir -->
+          <div class="all-text-page page_decou">
+            <form action="{{url_for('cdlLangues')}}" method=POST enctype="multipart/form-data">
+            **** VERSION FRANCAISE *** ligne sep
+            <input class="quart" id="text-decou-fr" type="text" name="trad-fr-d1" value="{{line1_decouv_fr}}">
+            <input class="quart" id="text-decou-fr" type="text" name="trad-fr-d2" value="{{line2_decouv_fr}}">
+            <input class="quart" id="text-decou-fr" type="text" name="trad-fr-d3" value="{{line3_decouv_fr}}">
+            <input class="quart" id="text-decou-fr" type="text" name="trad-fr-d4" value="{{line4_decouv_fr}}">
+            **** VERSION ANG *** ligne sep
+            <input class="quart" id="text-decou-fr" type="text" name="trad-en-d1" value="{{line1_decouv_en}}">
+            <input class="quart" id="text-decou-fr" type="text" name="trad-en-d2" value="{{line2_decouv_en}}">
+            <input class="quart" id="text-decou-fr" type="text" name="trad-en-d3" value="{{line3_decouv_en}}">
+            <input class="quart" id="text-decou-fr" type="text" name="trad-en-d4" value="{{line4_decouv_en}}">
+            **** VERSION LUX *** ligne sep
+            <input class="quart" id="text-decou-fr" type="text" name="trad-lux-d1" value="{{line1_decouv_lux}}">
+            <input class="quart" id="text-decou-fr" type="text" name="trad-lux-d2" value="{{line2_decouv_lux}}">
+            <input class="quart" id="text-decou-fr" type="text" name="trad-lux-d3" value="{{line3_decouv_lux}}">
+            <input class="quart" id="text-decou-fr" type="text" name="trad-lux-d4" value="{{line4_decouv_lux}}">
+            **** VERSION ALL *** ligne sep
+            <input class="quart" id="text-decou-fr" type="text" name="trad-all-d1" value="{{line1_decouv_all}}">
+            <input class="quart" id="text-decou-fr" type="text" name="trad-all-d2" value="{{line2_decouv_all}}">
+            <input class="quart" id="text-decou-fr" type="text" name="trad-all-d3" value="{{line3_decouv_all}}">
+            <input class="quart" id="text-decou-fr" type="text" name="trad-all-d4" value="{{line4_decouv_all}}">
+
+            <input class="validation-css-style-type" type="submit" name="form_decouvrir" value="Valider la traduction"/>
+
+          </form>
+          </div>
+
+          <!-- loisir -->
+          <div class="all-text-page page_shop">
+            <form action="{{url_for('cdlLangues')}}" method=POST enctype="multipart/form-data">
+            **** VERSION FRANCAISE *** ligne sep
+            <input class="quart" id="text-shop-fr" type="text" name="trad-fr-s1" value="{{line1_shop_fr}}">
+            <input class="quart" id="text-shop-fr" type="text" name="trad-fr-s2" value="{{line2_shop_fr}}">
+            <input class="quart" id="text-shop-fr" type="text" name="trad-fr-s3" value="{{line3_shop_fr}}">
+            <input class="quart" id="text-shop-fr" type="text" name="trad-fr-s4" value="{{line4_shop_fr}}">
+            <input class="quart" id="text-shop-fr" type="text" name="trad-fr-s5" value="{{line5_shop_fr}}">
+            **** VERSION ANG *** ligne sep
+            <input class="quart" id="text-shop-en" type="text" name="trad-en-s1" value="{{line1_shop_en}}">
+            <input class="quart" id="text-shop-en" type="text" name="trad-en-s2" value="{{line2_shop_en}}">
+            <input class="quart" id="text-shop-en" type="text" name="trad-en-s3" value="{{line3_shop_en}}">
+            <input class="quart" id="text-shop-en" type="text" name="trad-en-s4" value="{{line4_shop_en}}">
+            <input class="quart" id="text-shop-en" type="text" name="trad-en-s5" value="{{line5_shop_en}}">
+            **** VERSION LUX *** ligne sep
+            <input class="quart" id="text-shop-lu" type="text" name="trad-lux-s1" value="{{line1_shop_lux}}">
+            <input class="quart" id="text-shop-lu" type="text" name="trad-lux-s2" value="{{line2_shop_lux}}">
+            <input class="quart" id="text-shop-lu" type="text" name="trad-lux-s3" value="{{line3_shop_lux}}">
+            <input class="quart" id="text-shop-lu" type="text" name="trad-lux-s4" value="{{line4_shop_lux}}">
+            <input class="quart" id="text-shop-lu" type="text" name="trad-lux-s5" value="{{line5_shop_lux}}">
+            **** VERSION ALL *** ligne sep
+            <input class="quart" id="text-shop-de" type="text" name="trad-all-s1" value="{{line1_shop_all}}">
+            <input class="quart" id="text-shop-de" type="text" name="trad-all-s2" value="{{line2_shop_all}}">
+            <input class="quart" id="text-shop-de" type="text" name="trad-all-s3" value="{{line3_shop_all}}">
+            <input class="quart" id="text-shop-de" type="text" name="trad-all-s4" value="{{line4_shop_all}}">
+            <input class="quart" id="text-shop-de" type="text" name="trad-all-s5" value="{{line5_shop_all}}">
+            <input class="validation-css-style-type" type="submit" name="form_shopping" value="Valider la traduction"/>
+
+          </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='assets/_js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/_js/switch-section-form.js') }}"></script>
+    <script>
+      console.log("launch");
+      $(".radio-btn").click(function() {
+        var nbr=0;
+        $(".text-content-site-trad-base-fr").each(function(nbr){
+          $(this).attr('id', 'txt-p-'+(nbr+1));
+        });
+      });
+
+      $(".text-content-site-trad-base-fr").click(function() {
+        var moveText = $(this).text();
+        $('#text-fr').empty();
+        $('#text-fr').val(moveText);
+      });
+    </script>
+  </body>
+  </html>

@@ -1,0 +1,90 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red15\green112\blue3;\red255\green0\blue255;\red0\green0\blue109;
+\red0\green0\blue254;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww9220\viewh8880\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs72 \cf0 \\n
+\f1\fs22 \
+\
+
+\f2\b\fs26 mkdir folder from ssh
+\f1\b0\fs22  \
+
+\f2\b\fs28 \CocoaLigature0 sudo chmod 644 -R img.jpg
+\f1\b0\fs22 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs28 \cf0 service apache2 restart && systemctl restart varnish\
+\
+mysql --user=root -p \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs22 \cf0 sudo tail /var/log/apache2/error.log\
+\
+
+\fs72 CONVERT TO UTF-8:\
+
+\fs22 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs24 \cf0 \CocoaLigature1 c.execute(
+\f2\b \cf2 'SELECT * FROM lux_pub WHERE category = "Banniere";'
+\f1\b0 \cf0 )\
+
+\f2\b \cf1 \cb3 bannieres
+\f1\b0 \cf0 \cb1  = c.fetchall()\
+\
+
+\f2\b \cf1 \cb3 bannieres
+\f1\b0 \cf0 \cb1  = list(
+\f2\b \cf1 \cb3 bannieres
+\f1\b0 \cf0 \cb1 )\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\b \cf4 for 
+\f1\b0 \cf0 elem 
+\f2\b \cf4 in 
+\f1\b0 \cf0 range(\cf5 0\cf0 , len(
+\f2\b \cf1 \cb3 bannieres
+\f1\b0 \cf0 \cb1 )):\
+    
+\f2\b \cf1 \cb3 bannieres
+\f1\b0 \cf0 \cb1 [elem] = list(
+\f2\b \cf1 \cb3 bannieres
+\f1\b0 \cf0 \cb1 [elem])\
+\
+
+\f2\b \cf4 for 
+\f1\b0 \cf0 i 
+\f2\b \cf4 in 
+\f1\b0 \cf0 range(\cf5 0\cf0 , len(
+\f2\b \cf1 \cb3 bannieres
+\f1\b0 \cf0 \cb1 )):\
+    
+\f2\b \cf4 for 
+\f1\b0 \cf0 x 
+\f2\b \cf4 in 
+\f1\b0 \cf0 range(\cf5 0\cf0 , len(
+\f2\b \cf1 \cb3 bannieres
+\f1\b0 \cf0 \cb1 [i])):\
+        
+\f2\b \cf4 try
+\f1\b0 \cf0 :\
+            
+\f2\b \cf1 \cb3 bannieres
+\f1\b0 \cf0 \cb1 [i][x] = 
+\f2\b \cf1 \cb3 bannieres
+\f1\b0 \cf0 \cb1 [i][x].decode(
+\f2\b \cf2 "utf8"
+\f1\b0 \cf0 )\
+        
+\f2\b \cf4 except 
+\f1\b0 \cf0 AttributeError:\
+            
+\f2\b \cf4 pass\
+}

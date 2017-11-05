@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> UBITrack </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='font2.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" sizes="16x16">
+    <script src="{{ url_for('static', filename='moment.js') }}"> </script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid bg-color">
+      <div class="row">
+        <div class="col-md-3 logo">
+          <ul>
+            <li><img src="{{ url_for('static', filename='images/logo.svg') }}" class="img-responsive"> </li>
+            <li>
+              <h5 style="font-family: 'ProximaNovaS-Bold' !important; font-weight: 900 !important;">UBITrack</h5>
+              <p>Automated Universal Basic Income news service</p>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-9 universal">
+          <ul class="main-text">
+          <li> <!-- How does this website work? ! !--> &nbsp; </li>
+          <li><a href="" style="color: #d8d8d8;"><i class="fa fa-search"></i></a></li>
+          <li> </li>
+          <a class="linkFcb" href="https://www.facebook.com/ubi.track.news/">
+            <img src="{{ url_for('static', filename='images/fcb_logo.jpg') }}" width="30" height="30" style="margin-left: 10px; margin-right: 1px;">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid content-section">
+      <div class="row">
+        <a target="_blank" href="{{ mainImage[1] }}">
+          <div class="col-md-6 no-padd over-write">
+            <img src="{{ url_for('static', filename='database_images/bright_{}'.format(mainImage[2])) }}" class="img-responsive" width="100%">
+            <div class="mostly">
+              <h2>{{ mainImage[0] }}</h2>
+              {% if mainImage[5] == "no title (twitter)" %}
+                <span class="hide-text"> {{ mainImage[4] }} </span>
+              {% else %}
+                <span class="hide-text"> {{ mainImage[5] }} </span>
+              {% endif %}
+            </div>
+          </div>
+        </a>
+        <div class="col-md-3 no-padd">
+          <div class="col-md-12 no-padd">
+            <a target="_blank" href="{{ imagesTopRight_topleft[1] }}">
+              <div class="col-md-12 react-over-padd no-padd">
+                <img src="{{ url_for('static', filename='database_images/bright_{}'.format(imagesTopRight_topleft[2])) }}" class="img-responsive">
+                <div class="ganta-text">
+                  <h5>{{ imagesTopRight_topleft[0] }} </br> <span class="hide-text"> </span></h5>
+                </div>
+              </div>
+            </a>
+            <a target="_blank" href="{{ imagesTopRight_topright[1] }}">
+              <div class="col-md-12 react-over-padd no-padd" style="padding-top: 4px;">
+                <img src="{{ url_for('static', filename='database_images/bright_{}'.format(imagesTopRight_topright[2])) }}" class="img-responsive">
+                <div class="ganta-text">
+                  <h5>{{ imagesTopRight_topright[0] }} </br> <span class="hide-text"> </span></h5>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3 no-padd">
+          <div class="col-md-12 no-padd">
+            <a target="_blank" href="{{ imagesTopRight_bottomleft[1] }}">
+              <div class="col-md-12 react-over-padd no-padd">
+                <img src="{{ url_for('static', filename='database_images/bright_{}'.format(imagesTopRight_bottomleft[2])) }}" class="img-responsive">
+                <div class="ganta-text">
+                  <h5> {{ imagesTopRight_bottomleft[0] }} </br> <span class="hide-text"> </span></h5>
+                </div>
+              </div>
+            </a>
+            <a target="_blank" href="{{ imagesTopRight_bottomright[1] }}">
+              <div class="col-md-12 react-over-padd no-padd" style="padding-top: 4px;">
+                <img src="{{ url_for('static', filename='database_images/bright_{}'.format(imagesTopRight_bottomright[2])) }}" class="img-responsive">
+                <div class="ganta-text">
+                  <h5>{{ imagesTopRight_bottomright[0] }} </br> <span class="hide-text"> </span></h5>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid box-layer-section">
+      <div class="container">
+        <div class="row">
+          <!--Left side bar-->
+          <div class="col-md-3 left-side">
+            <h6>In brief</h6>
+            <a target="_blank" href="{{ latest1[1] }}" style='text-decoration: none;'>
+              <div class="col-md-12 mark-content">
+                <h4><b> {{ latest1[0] }} </b></h4>
+              </div>
+            </a>
+            <a target="_blank" href="{{ latest2[1] }}" style='text-decoration: none;'>
+              <div class="col-md-12 mark-content">
+                <h4><b> {{ latest2[0] }} </b></h4>
+              </div>
+            </a>
+            <a target="_blank" href="{{ latest3[1] }}" style='text-decoration: none;'>
+              <div class="col-md-12 mark-content">
+                <h4><b> {{ latest3[0] }} </b></h4>
+              </div>
+            </a>
+            <a target="_blank" href="{{ latest4[1] }}" style='text-decoration: none;'>
+              <div class="col-md-12 mark-content">
+                <h4><b> {{ latest4[0] }} </b></h4>
+              </div>
+            </a>
+            <a target="_blank" href="{{ latest5[1] }}" style='text-decoration: none;'>
+              <div class="col-md-12 mark-content">
+                <h4><b> {{ latest5[0] }} </b></h4>
+              </div>
+            </a>
+            <a target="_blank" href="{{ latest6[1] }}" style='text-decoration: none;'>
+              <div class="col-md-12 mark-content">
+                <h4><b> {{ latest6[0] }} </b></h4>
+              </div>
+            </a>
+            <a target="_blank" href="{{ latest7[1] }}" style='text-decoration: none;'>
+              <div class="col-md-12 mark-content">
+                <h4><b> {{ latest7[0] }} </b></h4>
+              </div>
+            </a>
+            <a target="_blank" href="{{ latest8[1] }}" style='text-decoration: none;'>
+              <div class="col-md-12 mark-content">
+                <h4><b> {{ latest8[0] }} </b></h4>
+              </div>
+            </a>
+          </div>
+          <!--Left side bar-->
+          <!--Right side bar-->
+          <div class="col-md-9 great-padd">
+            <div class="col-md-12 no-padd">
+              <!--First Image Category-->
+              <a target="_blank" href="{{ middleImage1[2] }}" style='text-decoration: none;'>
+                <div class="col-md-4 report-content no-relative">
+                  <img src="{{ url_for('static', filename='database_images/{}'.format(middleImage1[1])) }}" class="img-responsive" width="100%">
+                  <p>{{ middleImage1[0] }}</p>
+                </div>
+              </a>
+              <a target="_blank" href="{{ middleImage2[2] }}" style='text-decoration: none;'>
+                <div class="col-md-4 report-content">
+                  <img src="{{ url_for('static', filename='database_images/{}'.format(middleImage2[1])) }}" class="img-responsive" width="100%">
+                  <p>{{ middleImage2[0] }}</p>
+                </div>
+              </a>
+              <a target="_blank" href="{{ middleImage3[2] }}" style='text-decoration: none;'>
+                <div class="col-md-4 report-content no-relative">
+                  <img src="{{ url_for('static', filename='database_images/{}'.format(middleImage3[1])) }}" class="img-responsive" width="100%">
+                  <p>{{ middleImage3[0] }}</p>
+                </div>
+              </a>
+              <!--First Image Category-->
+            </div>
+            <div class="col-md-12 no-padd">
+              <!--second Image Category-->
+              <a target="_blank" href="{{ middleImage4[2] }}" style='text-decoration: none;'>
+                <div class="col-md-4 report-content no-relative">
+                  <img src="{{ url_for('static', filename='database_images/{}'.format(middleImage4[1])) }}" class="img-responsive" width="100%">
+                  <p>{{ middleImage4[0] }}</p>
+                </div>
+              </a>
+              <a target="_blank" href="{{ middleImage5[2] }}" style='text-decoration: none;'>
+                <div class="col-md-4 report-content">
+                  <img src="{{ url_for('static', filename='database_images/{}'.format(middleImage5[1])) }}" class="img-responsive" width="100%">
+                  <p>{{ middleImage5[0] }}</p>
+                </div>
+              </a>
+              <a target="_blank" href="{{ middleImage6[2] }}" style='text-decoration: none;'>
+                <div class="col-md-4 report-content no-relative">
+                  <img src="{{ url_for('static', filename='database_images/{}'.format(middleImage6[1])) }}" class="img-responsive" width="100%">
+                  <p>{{ middleImage6[0] }}</p>
+                </div>
+              </a>
+              <!--Second Image Category-->
+            </div>
+            <div class="col-md-12 no-padd">
+              <!--Third Image Category-->
+              <a target="_blank" href="{{ middleImage7[2] }}" style='text-decoration: none;'>
+                <div class="col-md-4 report-content no-relative">
+                  <img src="{{ url_for('static', filename='database_images/{}'.format(middleImage7[1])) }}" class="img-responsive" width="100%">
+                  <p>{{ middleImage7[0] }}</p>
+                </div>
+              </a>
+              <a target="_blank" href="{{ middleImage8[2] }}" style='text-decoration: none;'>
+                <div class="col-md-4 report-content">
+                  <img src="{{ url_for('static', filename='database_images/{}'.format(middleImage8[1])) }}" class="img-responsive" width="100%">
+                  <p>{{ middleImage8[0] }}</p>
+                </div>
+              </a>
+              <a target="_blank" href="{{ middleImage9[2] }}" style='text-decoration: none;'>
+                <div class="col-md-4 report-content no-relative">
+                  <img src="{{ url_for('static', filename='database_images/{}'.format(middleImage9[1])) }}" class="img-responsive" width="100%">
+                  <p>{{ middleImage9[0] }}</p>
+                </div>
+              </a>
+              <!--Third Image Category-->
+            </div>
+          </div>
+          <!--Right side bar-->
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid stories-section">
+      <div class="container">
+        <div class="row">
+          <h3 class="text-center more-head" style="font-weight: 100;">MORE STORIES</h3>
+
+          <a target="_blank" href="{{ moreStories1[2] }}">
+            <div class="col-md-12 bg-image-color no-padd">
+              <div class="col-md-3 box-image no-padd">
+                <img src="{{ url_for('static', filename='database_images/{}'.format(moreStories1[1])) }}" class="img-responsive" style="width: 340px !important; height: 195px !important; max-width: 340px !important;">
+              </div>
+              <div class="col-md-7 generation">
+                <h3> {{ moreStories1[0] }} </h3>
+                <p>Richard Matkins, 6 hours ago</p>
+              </div>
+            </div>
+          </a>
+
+          <a target="_blank" href="{{ moreStories2[2] }}">
+            <div class="col-md-12 bg-image-color no-padd">
+              <div class="col-md-3 box-image no-padd">
+                <img src="{{ url_for('static', filename='database_images/{}'.format(moreStories2[1])) }}" class="img-responsive" style="width: 340px !important; height: 195px !important; max-width: 340px !important;">
+              </div>
+              <div class="col-md-7 generation">
+                <h3> {{ moreStories2[0] }} </h3>
+                <p>Richard Matkins, 6 hours ago</p>
+              </div>
+            </div>
+          </a>
+
+          <a target="_blank" href="{{ moreStories3[2] }}">
+            <div class="col-md-12 bg-image-color no-padd">
+              <div class="col-md-3 box-image no-padd">
+                <img src="{{ url_for('static', filename='database_images/{}'.format(moreStories3[1])) }}" class="img-responsive" style="width: 340px !important; height: 195px !important; max-width: 340px !important;">
+              </div>
+              <div class="col-md-7 generation">
+                <h3> {{ moreStories3[0] }} </h3>
+                <p>Richard Matkins, 6 hours ago</p>
+              </div>
+            </div>
+          </a>
+
+          <a target="_blank" href="{{ moreStories4[2] }}">
+            <div class="col-md-12 bg-image-color no-padd">
+              <div class="col-md-3 box-image no-padd">
+                <img src="{{ url_for('static', filename='database_images/{}'.format(moreStories4[1])) }}" class="img-responsive" style="width: 340px !important; height: 195px !important; max-width: 340px !important;">
+              </div>
+              <div class="col-md-7 generation">
+                <h3> {{ moreStories4[0] }} </h3>
+                <p>Richard Matkins, 6 hours ago</p>
+              </div>
+            </div>
+          <a/>
+
+          <a target="_blank" href="{{ moreStories5[2] }}">
+            <div class="col-md-12 bg-image-color no-padd">
+              <div class="col-md-3 box-image no-padd">
+                <img src="{{ url_for('static', filename='database_images/{}'.format(moreStories5[1])) }}" class="img-responsive" style="width: 340px !important; height: 195px !important; max-width: 340px !important;">
+              </div>
+              <div class="col-md-7 generation">
+                <h3> {{ moreStories5[0] }} </h3>
+                <p>Richard Matkins, 6 hours ago</p>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid subscribe-section">
+      <div class="row">
+        <div class="col-md-12 text-center subscribe">
+          <h2>Subscribe to the newsletter</h2>
+          <p>get the most important, delivered each Sunday</p>
+        </div>
+        <div class="col-md-12 text-center text-box-sub">
+          <input type="text" name="" placeholder="e-mail address">
+          <input type="submit" name="submit" value="subscribe">
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid footer-bg">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h5> Made by <a href="http://michaelcukier.com"> Michael Cukier </a> </h5>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    // analytics
+    (function(){
+            var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call","trackForm","trackClick"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
+    })("woopra");
+
+    woopra.config({
+        domain: 'ubitrack.news'
+    });
+    woopra.track();
+
+    // 4 images top right
+    var allTimes = document.getElementsByClassName("hide-text")
+
+    var fourImageDate1 = moment("{{ imagesTopRight_topleft[3] }}","YYYY-MM-DD HH:mm:ss").fromNow();
+    var fourImages1 = allTimes[1];
+    var finalContentImage_title1 = "{{ imagesTopRight_topleft[5] }}".replace("no title (twitter)", "{{ imagesTopRight_topleft[4] }}");
+    var finalContentImage1 = finalContentImage_title1 + "\xa0 · \xa0" + fourImageDate1.replace(" hours ago", "h").replace(" minutes ago", "m").replace("an hour ago", "1h");
+    fourImages1.textContent = finalContentImage1;
+
+    var fourImageDate2 = moment("{{ imagesTopRight_topright[3] }}","YYYY-MM-DD HH:mm:ss").fromNow();
+    var fourImages2 = allTimes[2];
+    var finalContentImage_title2 = "{{ imagesTopRight_topright[5] }}".replace("no title (twitter)", "{{ imagesTopRight_topright[4] }}");
+    var finalContentImage2 = finalContentImage_title2 + "\xa0 · \xa0" + fourImageDate2.replace(" hours ago", "h").replace(" minutes ago", "m").replace("an hour ago", "1h");
+    fourImages2.textContent = finalContentImage2;
+
+    var fourImageDate3 = moment("{{ imagesTopRight_bottomleft[3] }}","YYYY-MM-DD HH:mm:ss").fromNow();
+    var fourImages3 = allTimes[3];
+    var finalContentImage_title3 = "{{ imagesTopRight_bottomleft[5] }}".replace("no title (twitter)", "{{ imagesTopRight_bottomleft[4] }}");
+    var finalContentImage3 = finalContentImage_title3 + "\xa0 · \xa0" + fourImageDate3.replace(" hours ago", "h").replace(" minutes ago", "m").replace("an hour ago", "1h");
+    fourImages3.textContent = finalContentImage3;
+
+    var fourImageDate4 = moment("{{ imagesTopRight_bottomright[3] }}","YYYY-MM-DD HH:mm:ss").fromNow();
+    var fourImages4 = allTimes[4];
+    var finalContentImage_title4 = "{{ imagesTopRight_bottomright[5] }}".replace("no title (twitter)", "{{ imagesTopRight_bottomright[4] }}");
+    var finalContentImage4 = finalContentImage_title4 + "\xa0 · \xa0" + fourImageDate4.replace(" hours ago", "h").replace(" minutes ago", "m").replace("an hour ago", "1h");
+    fourImages4.textContent = finalContentImage4;
+
+    // last updated
+    var main_text = document.getElementsByClassName("main-text")[0].getElementsByTagName("li")[2];
+    var last_updated_date = moment("{{ lastUpdated }}","YYYY-MM-DD HH:mm:ss").fromNow();
+    main_text.textContent = "Last update " + last_updated_date;
+
+    // more stories
+    var more_stories_select_1 = document.getElementsByClassName("col-md-7 generation")[0].getElementsByTagName("p");
+    var more_stories_date_1 = moment("{{ moreStories1[3] }}","YYYY-MM-DD HH:mm:ss").fromNow();
+    var more_stories_title_1 = "{{ moreStories1[4] }}".replace("no title (twitter)", "{{ moreStories1[6] }}");
+    more_stories_select_1[0].textContent = more_stories_title_1 + "\xa0 · \xa0" + more_stories_date_1.replace(" hours ago", "h").replace(" minutes ago", "m").replace("an hour ago", "1h");
+
+    var more_stories_select_2 = document.getElementsByClassName("col-md-7 generation")[1].getElementsByTagName("p");
+    var more_stories_date_2 = moment("{{ moreStories2[3] }}","YYYY-MM-DD HH:mm:ss").fromNow();
+    var more_stories_title_2 = "{{ moreStories2[4] }}".replace("no title (twitter)", "{{ moreStories2[6] }}");
+    more_stories_select_2[0].textContent = more_stories_title_2 + "\xa0 · \xa0" + more_stories_date_2.replace(" hours ago", "h").replace(" minutes ago", "m").replace("an hour ago", "1h");
+
+    var more_stories_select_3 = document.getElementsByClassName("col-md-7 generation")[2].getElementsByTagName("p")
+    var more_stories_date_3 = moment("{{ moreStories3[3] }}","YYYY-MM-DD HH:mm:ss").fromNow();
+    var more_stories_title_3 = "{{ moreStories3[4] }}".replace("no title (twitter)", "{{ moreStories3[6] }}")
+    more_stories_select_3[0].textContent = more_stories_title_3 + "\xa0 · \xa0" + more_stories_date_3.replace(" hours ago", "h").replace(" minutes ago", "m").replace("an hour ago", "1h");
+
+    var more_stories_select_4 = document.getElementsByClassName("col-md-7 generation")[3].getElementsByTagName("p")
+    var more_stories_date_4 = moment("{{ moreStories4[3] }}","YYYY-MM-DD HH:mm:ss").fromNow();
+    var more_stories_title_4 = "{{ moreStories4[4] }}".replace("no title (twitter)", "{{ moreStories4[6] }}")
+    more_stories_select_4[0].textContent = more_stories_title_4 + "\xa0 · \xa0" + more_stories_date_4.replace(" hours ago", "h").replace(" minutes ago", "m").replace("an hour ago", "1h");
+
+    var more_stories_select_5 = document.getElementsByClassName("col-md-7 generation")[4].getElementsByTagName("p")
+    var more_stories_date_5 = moment("{{ moreStories5[3] }}","YYYY-MM-DD HH:mm:ss").fromNow();
+    var more_stories_title_5 = "{{ moreStories5[4] }}".replace("no title (twitter)", "{{ moreStories5[6] }}")
+    more_stories_select_5[0].textContent = more_stories_title_5 + "\xa0 · \xa0" + more_stories_date_5.replace(" hours ago", "h").replace(" minutes ago", "m").replace("an hour ago", "1h");
+  </script>
+</html>
