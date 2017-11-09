@@ -18,8 +18,8 @@ import facebook
 
 def send_to_fcb_page(link, titleFcb):
     cfg = {
-        "page_id": "HIDDEN",  # Step 1
-        "access_token": "HIDDEN"
+        "page_id": "1342236565904895",  # Step 1
+        "access_token": "EAAEDy7ZBmEeABANxHEZAgxuYTDjEyNUZAiH6zqhBPTqnSv6cMG0Sg4smq57CYZCk7pVjcr78zgGSbZASglxgoh5LiTOxwQruegJFpksZCxHX244vFQUobkmteob6Qo1t2K33ryIlBFF3Hpq3aMz1WOZC36lJih3bdPoMbr3SsD89AZDZD"
     }
 
     attachment = {
@@ -78,7 +78,7 @@ def cleantime():
 
 
 def just_connect():
-    conn = MySQLdb.connect(host="localhost", user="HIDDEN", passwd="HIDDEN", db="HIDDEN")
+    conn = MySQLdb.connect(host="localhost", user="root", passwd="cukier", db="pythonprogramming")
     c = conn.cursor()
 
     conn.set_character_set('utf8')
@@ -457,6 +457,7 @@ def uploadToDB(source, linksBeforeClean):
                 conn.commit()
             except MySQLdb.OperationalError:
                 getNameFromTwitter = "no title (twitter)"
+                title = "no title (twitter)"
                 c.execute("INSERT INTO articles (title, url, image, URLClean, pubDate, content, mainImage, source, mainImageBrightness, titleOfWebsite) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (title, url, getLogoFromTwitter, urlClean, pubDate, content, img, source, img_bright, getNameFromTwitter))
                 conn.commit()
             except:
@@ -481,3 +482,8 @@ def uploadToDB(source, linksBeforeClean):
 def reboot(exception, nameOfSite):
     print("### - HAD TO REBOOT - PROBLEM: " + str(exception) + " (" + str(nameOfSite) + ")")
     os.system('/sbin/reboot')
+    # raise exception
+
+
+def test_url(url):
+    pass
