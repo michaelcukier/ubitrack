@@ -18,8 +18,8 @@ import facebook
 
 def send_to_fcb_page(link, titleFcb):
     cfg = {
-        "page_id": "1342236565904895",  # Step 1
-        "access_token": "EAAEDy7ZBmEeABANxHEZAgxuYTDjEyNUZAiH6zqhBPTqnSv6cMG0Sg4smq57CYZCk7pVjcr78zgGSbZASglxgoh5LiTOxwQruegJFpksZCxHX244vFQUobkmteob6Qo1t2K33ryIlBFF3Hpq3aMz1WOZC36lJih3bdPoMbr3SsD89AZDZD"
+        "page_id": "HIDDEN",  # Step 1
+        "access_token": "HIDDEN"
     }
 
     attachment = {
@@ -78,7 +78,7 @@ def cleantime():
 
 
 def just_connect():
-    conn = MySQLdb.connect(host="localhost", user="root", passwd="cukier", db="pythonprogramming")
+    conn = MySQLdb.connect(host="localhost", user="HIDDEN", passwd="HIDDEN", db="HIDDEN")
     c = conn.cursor()
 
     conn.set_character_set('utf8')
