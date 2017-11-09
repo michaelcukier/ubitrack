@@ -8,5 +8,3 @@ http://ubitrack.news/ - A website that gathers news articles talking about Basic
 * Scripts also posts to the facebook page (https://www.facebook.com/ubi.track.news/) using the Facebook API
 * Optimized with Varnish Cache to speed up client loading time of the news aggregator
 * Bridge between the scrapers and the front-end is made using Flask
-
-###### Made by Michael Cukier (http://michaelcukier.com)
