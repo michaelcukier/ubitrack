@@ -42,12 +42,3 @@ class Article:
 article = Article("http://google.com")  # original article url here
 for article_data_type in ["html", "urlclean", "title", "ogimage", "twitterdata", "embedly", "pubdate"]:
     print(article_data_type + ": " + str(eval("article." + article_data_type + "()")))
-
-"""
-def publish(article): # JSON style output
-    published_article = {}
-    published_article["url"] = article.url
-    for article_data_type in ["html", "urlclean", "title", "ogimage", "twitterdata", "embedly", "pubdate"]:
-        published_article[article_data_type] = eval("article." + article_data_type + "()")
-    return published_article
-"""
