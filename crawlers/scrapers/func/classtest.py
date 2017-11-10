@@ -1,3 +1,5 @@
+# get data to upload
+
 def publish(article):
     published_article = {}
     published_article["url"] = article.url
@@ -7,7 +9,6 @@ def publish(article):
     return published_article
 
 class Article:
-
     def __init__(self, url):
         self.url = url
 
