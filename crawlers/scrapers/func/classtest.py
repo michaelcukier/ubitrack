@@ -1,7 +1,7 @@
 def publish(article):
     published_article = {}
     published_article["url"] = article.url
-    for article_data_type in ["html", "urlclean", "title", "ogimage", "mediaLogoAndNameFromTwitter", "contentFromEmbdly", "pubdate"]:
+    for article_data_type in ["html", "urlclean", "title", "ogimage", "twitter", "embdly", "pubdate"]:
         published_article[article_data_type] = eval("article." + article_data_type + "()")
         
     return published_article
@@ -31,15 +31,16 @@ class Article:
             ogimage = "here's the og image from html"
         return ogimage
 
-    def mediaLogoAndNameFromTwitter(self):
+    def twitter(self):
         if self.url == "http://google.com":
-            mediaLogoAndNameFromTwitter = "here's the logo + name from twitter"
-        return mediaLogoAndNameFromTwitter
+            logotwitter = "here's the logo from twitter"
+            titletwitter = "here's the title from twitter"
+        return logotwitter, titletwitter
 
-    def contentFromEmbdly(self):
+    def embdly(self):
         if self.url == "http://google.com":
-            contentFromEmbdly = "clean search engine"
-        return contentFromEmbdly
+            embdly = "clean search engine"
+        return embdly
 
     def pubdate(self):
         return "time now"
