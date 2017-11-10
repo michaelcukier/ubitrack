@@ -42,3 +42,5 @@ class Article:
 article = Article("http://google.com")  # original article url here
 for article_data_type in ["html", "urlclean", "title", "ogimage", "twitterdata", "embedly", "pubdate"]:
     print(article_data_type + ": " + str(eval("article." + article_data_type + "()")))
+
+
