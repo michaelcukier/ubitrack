@@ -1,13 +1,9 @@
 def publish(article):
     published_article = {}
     published_article["url"] = article.url
-    published_article["html"] = article.html()
-    published_article["urlclean"] = article.urlclean()
-    published_article["title"] = article.title()
-    published_article["ogimage"] = article.ogimage()
-    published_article["mediaLogoAndNameFromTwitter"] = article.mediaLogoAndNameFromTwitter()
-    published_article["contentFromEmbdly"] = article.contentFromEmbdly()
-    published_article["pubdate"] = article.pubdate()
+    for article_data_type in ["html", "urlclean", "title", "ogimage", "mediaLogoAndNameFromTwitter", "contentFromEmbdly", "pubdate"]:
+        published_article[article_data_type] = eval("article." + article_data_type + "()")
+        
     return published_article
 
 class Article:
